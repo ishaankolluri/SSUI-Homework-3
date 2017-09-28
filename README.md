@@ -1,4 +1,8 @@
 # SSUI-Homework-3
+
+https://ishaankolluri.github.io/SSUI-Homework-3/
+
+
 A template for Software Structures for User Interfaces Fall 2017 course, Homework 3.
 
 To get started with your homework, please fork this repository. Instructions can be found here:https://help.github.com/articles/fork-a-repo/
