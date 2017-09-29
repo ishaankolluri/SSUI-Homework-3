@@ -6,15 +6,22 @@ body{
 }
 
 h1 {
-  font-family: 'Bad Script', cursive;
-  color: orangered;
+  font-family: 'Pacifico', cursive;
+  font-size: 54px;
+  color: #D16D6A;
 }
 
 p {
   text-align: left;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Poppins-Light', sans-serif;
 }
 
 .starterImage{
   width: 16em;
 }
+
+
+/* Title and Logo: */
+font-family: Pacifico-Regular;
+font-size: 54px;
+color: #D16D6A;
