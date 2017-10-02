@@ -14,14 +14,28 @@ function showModal(){
 
 function detailPlus(){
 	var num = document.getElementsByClassName("detailNumber")[0];
-	prs = parseInt(num.innerHTML());
+	prs = parseInt(num.innerHTML);
 	num.innerHTML = prs + 1;
 }
 
 function detailMinus(){
 	var num = document.getElementsByClassName("detailNumber")[0];
-	prs = parseInt(num.innerHTML());
+	prs = parseInt(num.innerHTML);
 	if(prs - 1 >= 0){
-		num.innerHTML = prs + 1;
+		num.innerHTML = prs - 1;
+	}
+}
+
+window.onload = function(){
+	var alert = document.getElementById('alert');
+	console.log(alert);
+	var span = document.getElementById("alertClose");
+	span.onclick = function(){
+		modal.style.display = "none";
+	}
+	window.onclick = function(event){
+		if(event.target == alert){
+			modal.style.display = "none";
+		}
 	}
 }

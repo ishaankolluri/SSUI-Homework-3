@@ -83,6 +83,8 @@ window.onload = function(){
 		image.addEventListener('click', function(){
 			var id = this.id;
 			var scraped = id.split("_")[0];
+			var add = document.getElementsByClassName('detailAdd')[0];
+			add.id = scraped + "_add";
 			var name = document.getElementById('detailName');
 			name.innerHTML = global_names[scraped];
 			var productimg = document.getElementsByClassName('detailImage')[0];

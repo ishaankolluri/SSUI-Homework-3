@@ -16,11 +16,11 @@
 .modal-content {
 	float: right;
     background-color: #FAFAFA;
-    margin-top: 10%;
+    margin-top: 5%;
     margin-left: 15%; /* 15% from the top and centered */
     padding: 20px;
     width: 40%; /* Could be more or less, depending on screen size */
-    height: 40%;
+    height: auto;
     box-shadow: 0px 1px 20px 2px #D16D6A;
 }
 
@@ -99,7 +99,7 @@
 	width: 100%;
 	float: left;
 	display: block;
-	border: 3px solid #D16D6A;
+	border: 1px solid #D16D6A;
 	background-color: #FAFAFA;
 	border-radius: 3px;
 	/* Add To Cart Copy: */
@@ -140,7 +140,7 @@
 	display: inline-block;
 	float: left;
 	width: 100%;
-	border: 3px solid #D16D6A;
+	border: 1px solid #D16D6A;
 	background-color: #FAFAFA;
 	border-radius: 3px;
 	/* Add To Cart Copy: */
@@ -197,20 +197,25 @@
 
 .detailImageContainer {
 	float: left;
+	display: block;
 	width: 30%;
 }
 
 .detailImage {
+	float: left;
 	width: 246px;
 	height: 215px;
 }
 
 .detailPurchaseInfo {
-	float: left;
-	width: 70%;
+	margin-top: 50px;
+	float: right;
+	display: block;
+	width: 40%;
 }
 
 .detailDescription {
+	float: right;
 	width: 100%;
 }
 
@@ -234,7 +239,7 @@
 	display: inline-block;
 	float: left;
 	width: 100%;
-	border: 3px solid #D16D6A;
+	border: 1px solid #D16D6A;
 	background-color: #FAFAFA;
 	border-radius: 3px;
 	/* Add To Cart Copy: */
@@ -250,4 +255,15 @@
 }
 
 
+
+/* Alert Content */
+
+.alertContent {
+    background-color: #FAFAFA;
+	margin: auto;
+    padding: 20px;
+    width: auto; /* Could be more or less, depending on screen size */
+    height: auto;
+    box-shadow: 0px 1px 20px 2px #D16D6A;
+}
 
