@@ -260,10 +260,28 @@
 
 .alertContent {
     background-color: #FAFAFA;
-	margin: auto;
+	margin-top: 100px;
+	width: 40%;
+	height: 20%;
     padding: 20px;
-    width: auto; /* Could be more or less, depending on screen size */
-    height: auto;
+    font-family: "Poppins-Light", sans-serif;
+    font-size: 36px;
     box-shadow: 0px 1px 20px 2px #D16D6A;
 }
 
+
+#alertClose {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#alertClose:hover,
+#alertClose:focus {
+    color: #D16D6A;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s linear;
+
+}

@@ -35,6 +35,7 @@ var global_names = [
 ];
 
 function addToCartFromHome(id){
+	console.log(id);
 	var shoppingCartContainer = document.getElementsByClassName('modal-content')[0];
 	var row = document.createElement('div');
 	row.classList.add('modalRow');
@@ -69,6 +70,7 @@ function addToCartFromHome(id){
 	plusImage.setAttribute("src", "resources/images/web/plus.svg");
 	plusImage.setAttribute("onmouseover", "this.src=\'resources/images/web/plushover.svg\'");
 	plusImage.setAttribute("onmouseout", "this.src=\'resources/images/web/plus.svg\'");
+	plusImage.setAttribute("onclick", "cartPlus(this)");
 	plus.appendChild(plusImage);
 	plus.id = id + "_modalplus";
 	toggles.appendChild(plus);
@@ -78,6 +80,7 @@ function addToCartFromHome(id){
 	minusImage.setAttribute("src", "resources/images/web/minus.svg");
 	minusImage.setAttribute("onmouseover", "this.src=\'resources/images/web/minushover.svg\'");
 	minusImage.setAttribute("onmouseout", "this.src=\'resources/images/web/minus.svg\'");
+	minusImage.setAttribute("onclick", "cartMinus(this)");	
 	minus.appendChild(minusImage);
 	minus.id = id + "_modalminus";
 	toggles.appendChild(minus);
@@ -85,6 +88,7 @@ function addToCartFromHome(id){
 	quant.appendChild(toggles);
 
 	var remove = document.createElement('button');
+	remove.setAttribute("onclick", "cartRemove(this)");
 	remove.innerHTML = "Remove";
 	remove.classList.add('modalRemove');
 	remove.innerHTML = "Remove";
@@ -106,13 +110,26 @@ function addToCartFromHome(id){
 	cartnum.innerHTML = parseInt(size) + 1
 
 	
-	var alert = document.getElementById('alert');
+	var alertModal = document.getElementById('alert');
 	var content = document.getElementsByClassName('alertContent')[0];
-	content.innerHTML = "Added to Cart".
-	console.log(alert);
-	alert.style.display = "block";
+	content.innerHTML = "Added to Cart";
+	alertModal.style.display = "block";
 	setTimeout(function(){
-		alert.style.display = "none";
-	}, 2000);
+		alertModal.style.display = "none";
+	}, 1000);
 
+}
+
+function addFromDetailView(obj){
+	var id = obj.id.split("_")[0];
+	var modal = document.getElementById("detailModal");
+	modal.style.display = "none";
+	addToCartFromHome(id);
+	var alertModal = document.getElementById('alert');
+	var content = document.getElementsByClassName('alertContent')[0];
+	content.innerHTML = "Added to Cart";
+	alertModal.style.display = "block";
+	setTimeout(function(){
+		alertModal.style.display = "none";
+	}, 1000);
 }

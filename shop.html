@@ -15,6 +15,7 @@
   <!--The following line loads in your JS script-->
   <script src="scripts/todo.js"></script>
   <script src="scripts/modal.js"></script>
+  <script src="scripts/index.js"></script>  
 </head>
 
 <body>
@@ -48,52 +49,52 @@
   <div id="productContainer">
   </div>
 
-    <div id="shoppingCart" class="modal">
-  <div class="modal-content">
-    <span id="close">&times;</span>
-    <div class="modalHeader">
-      <span class="modalHeaderContent">Your Cart</span>
-    </div>
-    <div class="modalRow">
-        <div class="modalImg">
-          <img src="resources/images/web/rolls/blackberry@2x.jpg" width="82" height="82">
-        </div>
-        <div class="modalInfo">
-          <div class="modalFlavor">Blackberry</div>
-          <div class="modalQuantity">
-            <div class="modalNumber">2</div>
-            <div class="modalToggles">
-              <img id="1_modalplus" src="resources/images/web/plus.svg" onmouseover="this.src='resources/images/web/plushover.svg'" onmouseout="this.src='resources/images/web/plus.svg'" width="30px" height="30px">
-              <img id="1_modalminus" src="resources/images/web/minus.svg" onmouseover="this.src='resources/images/web/minushover.svg'" onmouseout="this.src='resources/images/web/minus.svg'" width="30px" height="30px">
-            </div>
-            <button class="modalRemove">Remove</button>
+  <div id="shoppingCart" class="modal">
+    <div class="modal-content">
+      <span id="close">&times;</span>
+      <div class="modalHeader">
+        <span class="modalHeaderContent">Your Cart</span>
+      </div>
+      <div class="modalRow">
+          <div class="modalImg">
+            <img src="resources/images/web/rolls/blackberry@2x.jpg" width="82" height="82">
           </div>
-        </div>
-        <div class="modalPrice">$10.98</div>
-    </div>
-    <div class="modalRow">
-        <div class="modalImg">
-          <img src="resources/images/web/rolls/walnut@2x.jpg" width="82" height="82">
-        </div>
-        <div class="modalInfo">
-          <div class="modalFlavor">Walnut</div>
-          <div class="modalQuantity">
-            <div class="modalNumber">2</div>
-            <div class="modalToggles">
-              <img id="2_modalplus" src="resources/images/web/plus.svg" onmouseover="this.src='resources/images/web/plushover.svg'" onmouseout="this.src='resources/images/web/plus.svg'" width="30px" height="30px">
-              <img id="2_modalminus" src="resources/images/web/minus.svg" onmouseover="this.src='resources/images/web/minushover.svg'" onmouseout="this.src='resources/images/web/minus.svg'" width="30px" height="30px">
+          <div class="modalInfo">
+            <div class="modalFlavor">Blackberry</div>
+            <div class="modalQuantity">
+              <div class="modalNumber">2</div>
+              <div class="modalToggles">
+                <img id="1_modalplus" src="resources/images/web/plus.svg" onmouseover="this.src='resources/images/web/plushover.svg'" onmouseout="this.src='resources/images/web/plus.svg'" width="30px" height="30px" onclick="cartPlus(this)">
+                <img id="1_modalminus" src="resources/images/web/minus.svg" onmouseover="this.src='resources/images/web/minushover.svg'" onmouseout="this.src='resources/images/web/minus.svg'" width="30px" height="30px" onclick="cartMinus(this)">
+              </div>
+              <button class="modalRemove" onclick="cartRemove(this)">Remove</button>
             </div>
-            <button class="modalRemove">Remove</button>
           </div>
-        </div>
-        <div class="modalPrice">$10.98</div>
+          <div class="modalPrice">$10.98</div>
+      </div>
+      <div class="modalRow">
+          <div class="modalImg">
+            <img src="resources/images/web/rolls/walnut@2x.jpg" width="82" height="82">
+          </div>
+          <div class="modalInfo">
+            <div class="modalFlavor">Walnut</div>
+            <div class="modalQuantity">
+              <div class="modalNumber">2</div>
+              <div class="modalToggles">
+                <img id="2_modalplus" src="resources/images/web/plus.svg" onmouseover="this.src='resources/images/web/plushover.svg'" onmouseout="this.src='resources/images/web/plus.svg'" width="30px" height="30px" onclick="cartPlus(this)">
+                <img id="2_modalminus" src="resources/images/web/minus.svg" onmouseover="this.src='resources/images/web/minushover.svg'" onmouseout="this.src='resources/images/web/minus.svg'" width="30px" height="30px" onclick="cartMinus(this)">
+              </div>
+              <button class="modalRemove" onclick="cartRemove(this)">Remove</button>
+            </div>
+          </div>
+          <div class="modalPrice">$10.98</div>
+      </div>
+      <div id="checkoutRow" class="modalRow">
+        <div class="modalTotal">Total: $21.96</div>
+      </div>
+      <button class="checkout" onclick="cartCheckout()">Checkout</button>
     </div>
-    <div id="checkoutRow" class="modalRow">
-      <div class="modalTotal">Total: $21.96</div>
-    </div>
-    <button class="checkout">Checkout</button>
   </div>
-</div>
 
   <div id=detailModal class="modal">
     <div class="detailContent">

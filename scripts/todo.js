@@ -34,7 +34,21 @@ var global_names = [
 	"Blackberry",
 ];
 
-window.onload = function(){
+function setAlerts(){
+	var alert = document.getElementById('alert');
+	console.log(alert);
+	var span = document.getElementById("alertClose");
+	span.onclick = function(){
+		modal.style.display = "none";
+	}
+	window.onclick = function(event){
+		if(event.target == alert){
+			modal.style.display = "none";
+		}
+	}
+}
+
+function buildProducts(){
 	var table = document.getElementById("productContainer");
 	var firstRow = document.createElement('div');
 	firstRow.classList.add('productRow');
@@ -48,7 +62,8 @@ window.onload = function(){
 			currentRow.classList.add('productRow');
 			table.appendChild(currentRow);
 		}
-		var plus = document.createElement('svg');		
+		var plus = document.createElement('svg');
+		plus.setAttribute("onclick", "productPlus(this)");
 		var plusImage = document.createElement('img');
 		plusImage.setAttribute("src", "resources/images/web/plus.svg");
 		plusImage.setAttribute("onmouseover", "this.src=\'resources/images/web/plushover.svg\'");
@@ -58,6 +73,7 @@ window.onload = function(){
 		plus.classList.add('number');
 		
 		var minus = document.createElement('svg');
+		minus.setAttribute("onclick", "productMinus(this)");
 		var minusImage = document.createElement('img');
 		minusImage.setAttribute("src", "resources/images/web/minus.svg");
 		minusImage.setAttribute("onmouseover", "this.src=\'resources/images/web/minushover.svg\'");
@@ -72,10 +88,11 @@ window.onload = function(){
 		counter.classList.add('counter');
 
 		var addToCart = document.createElement('button');
+		addToCart.setAttribute("onclick", "addToCartFromHome(" + i + ")");
 		addToCart.innerHTML = "Add";
 		addToCart.id = i;
 		addToCart.classList.add('addToCart');
-
+ 
 		var image = document.createElement('img');
 		image.id = i + "_image";
 		image.src = "resources/images/web/rolls/" + global_flavors[i] + "@2x.jpg";
@@ -90,6 +107,7 @@ window.onload = function(){
 			var productimg = document.getElementsByClassName('detailImage')[0];
 			productimg.src = "resources/images/web/rolls/" + global_flavors[scraped] + "@2x.jpg";
 			var detailAdd = document.getElementsByClassName("detailAdd")[0];
+			detailAdd.setAttribute("onclick", "addFromDetailView(this)");
 			var modal = document.getElementById('detailModal');
 			modal.style.display = "block";
 			var span = document.getElementById("detailClose");
@@ -122,10 +140,13 @@ window.onload = function(){
 		cartContainer.appendChild(counter);
 		cartContainer.appendChild(addToCart);
 		product.appendChild(cartContainer);
-
 		currentRow.appendChild(product);
-
 		i++;
 	}
 	i=0;
+}
+
+window.onload = function(){
+	buildProducts();
+	setAlerts();
 };
