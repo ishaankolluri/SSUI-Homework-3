@@ -1,28 +1,32 @@
 #productContainer {
 	width: 100%;
+	padding-left: 100px;
 }
 
 
 
 .product {
+	margin-top: 20px;
+	float: left;
 	width: 30%;
 	margin-bottom: 30px;
 
 }
 
+.productRow {
+	width: 100%;
+}
+
 .productImage {
+	margin-top: 10px;
 	width: 246px;
 	height: 215px;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 10px;
+	cursor: pointer;
 }
-
-.cartInfo {
-
-}
-
 
 .number {
 	display: inline-block;
@@ -42,11 +46,12 @@
 
 .cartContainer {
 	width: 100%;
-	padding-left: 20px;
+	padding-left: 170px;
+/*	padding-right: 30px;*/
 }
 
 .addToCart {
-	float: right;
+	margin-left: 20px;
 	border: 1.5px solid #D16D6A;
 	background-color: #FAFAFA;
 	padding-left: 10px;
@@ -68,4 +73,8 @@
 .label {
 	font-family: 'Poppins-Bold', sans-serif;
 	font-size: 20px;
+}
+
+.labelContainer {
+	text-align: center;
 }

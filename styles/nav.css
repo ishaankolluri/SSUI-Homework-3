@@ -72,9 +72,5 @@ svg#cartContainer {
 	height: 35px;
 	padding-top: 5px;
 	width: auto;
+	cursor: pointer;
 }
-
-/*svg#cartContainer:hover {
-	box-shadow: 0 0 100px -30px #555;
-	transition: all 0.3s linear;
-}*/

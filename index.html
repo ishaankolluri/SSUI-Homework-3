@@ -7,11 +7,11 @@
   <!--The following line loads in your CSS style sheet-->
   <link rel="stylesheet" href="styles/index.css">
   <link rel="stylesheet" href="styles/nav.css">
+  <link rel="stylesheet" href="styles/modal.css">
   <!--The following line loads in 2 fonts from Google Fonts: Bad Script and Lato-->
   <link href="https://fonts.googleapis.com/css?family=Pacifico|Poppins" rel="stylesheet">
 
-  <!--The following line loads in your JS script-->
-  <script src="js/todo.js"></script>
+  <script src="scripts/modal.js"></script>
 </head>
 
 <body>
@@ -22,7 +22,7 @@
       <li><a href="shop.html">SHOP</a></li>
       <li><a href="index.html">ABOUT</a></li>
 
-      <svg id="cartContainer" width="46px" height="40px" viewBox="0 0 46 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <svg id="cartContainer" width="46px" height="40px" viewBox="0 0 46 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" onclick="showModal()">
       <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
       <desc>Created with Sketch.</desc>
       <defs></defs>
@@ -37,6 +37,7 @@
                   </text>
               </g>
           </g>
+          <!-- <rect class="btn" x="0" y="0" width="46" height="40"/> -->
       </g>
   </svg>
     </ul>
@@ -69,8 +70,55 @@
     Maple Apple Pecan <br>
     <button class="addToCartLarge">Add to Cart</button>
   </div>
-  
  </div>
+
+  <div id="shoppingCart" class="modal">
+  <div class="modal-content">
+    <span id="close">&times;</span>
+    <div class="modalHeader">
+      <span class="modalHeaderContent">Your cart has 2 Items</span>
+    </div>
+    <div class="modalRow">
+        <div class="modalImg">
+          <img src="resources/images/web/rolls/blackberry@2x.jpg" width="82" height="82">
+        </div>
+        <div class="modalInfo">
+          <div class="modalFlavor">Blackberry</div>
+          <div class="modalQuantity">
+            <div class="modalNumber">2</div>
+            <div class="modalToggles">
+              <img id="1_modalplus" src="resources/images/web/plus.svg" onmouseover="this.src='resources/images/web/plushover.svg'" onmouseout="this.src='resources/images/web/plus.svg'" width="30px" height="30px">
+              <img id="1_modalminus" src="resources/images/web/minus.svg" onmouseover="this.src='resources/images/web/minushover.svg'" onmouseout="this.src='resources/images/web/minus.svg'" width="30px" height="30px">
+            </div>
+            <button class="modalRemove">Remove</button>
+          </div>
+        </div>
+        <div class="modalPrice">$10.98</div>
+    </div>
+    <div class="modalRow">
+        <div class="modalImg">
+          <img src="resources/images/web/rolls/walnut@2x.jpg" width="82" height="82">
+        </div>
+        <div class="modalInfo">
+          <div class="modalFlavor">Walnut</div>
+          <div class="modalQuantity">
+            <div class="modalNumber">2</div>
+            <div class="modalToggles">
+              <img id="2_modalplus" src="resources/images/web/plus.svg" onmouseover="this.src='resources/images/web/plushover.svg'" onmouseout="this.src='resources/images/web/plus.svg'" width="30px" height="30px">
+              <img id="2_modalminus" src="resources/images/web/minus.svg" onmouseover="this.src='resources/images/web/minushover.svg'" onmouseout="this.src='resources/images/web/minus.svg'" width="30px" height="30px">
+            </div>
+            <button class="modalRemove">Remove</button>
+          </div>
+        </div>
+        <div class="modalPrice">$10.98</div>
+    </div>
+    <div class="modalRow">
+      <div class="modalTotal">Total: $21.96</div>
+    </div>
+    <button class="checkout">Checkout</button>
+  </div>
+
+</div>
 </body>
 </html>
 
