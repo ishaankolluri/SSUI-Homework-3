@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Bun Bun Bake Shop</title>
+
+  <!--The following line loads in your CSS style sheet-->
+  <!-- <link rel="stylesheet" href="styles/index.css"> -->
+  <link rel="stylesheet" href="styles/nav.css">
+  <link rel="stylesheet" href="styles/shop.css">
+  <link rel="stylesheet" href="styles/modal.css">
+  <!--The following line loads in 2 fonts from Google Fonts: Bad Script and Lato-->
+  <link href="https://fonts.googleapis.com/css?family=Pacifico|Poppins" rel="stylesheet">
+
+  <!--The following line loads in your JS script-->
+  <script src="scripts/todo.js"></script>
+  <script src="scripts/modal.js"></script>
+  <script src="scripts/index.js"></script>  
+</head>
+
+<body>
+  <h1>Bun Bun Bake Shop</h1>
+  <div class="navContainer">
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a class="activeNav" href="shop.html">SHOP</a></li>
+      <svg id="cartContainer" width="46px" height="40px" viewBox="0 0 46 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" onclick="showModal()">
+      <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+      <desc>Created with Sketch.</desc>
+      <defs></defs>
+      <g id="HiFi-Cinnabon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g id="Artboard" transform="translate(-1265.000000, -487.000000)" fill="#FAFAFA">
+              <g id="cart" transform="translate(1265.000000, 487.000000)">
+                  <path d="M45.2727273,7.63636364 C45.1010415,7.40744923 44.8315975,7.27272727 44.5454545,7.27272727 L10.9090909,7.27272727 C10.8481003,7.27233824 10.7872138,7.27781803 10.7272727,7.28909091 L9.41454545,2.01636364 C9.09349117,0.827276248 8.01530344,0.000938868622 6.78363636,0 L0.909090909,0 C0.407013864,0 6.14867046e-17,0.407013864 0,0.909090909 C-6.14867046e-17,1.41116795 0.407013864,1.81818182 0.909090909,1.81818182 L6.78363636,1.81818182 C7.18987144,1.81807201 7.54687342,2.08749346 7.65818182,2.47818182 L14.5672727,30.22 C14.6687328,30.6268239 15.0352674,30.9114891 15.4545455,30.9090909 L15.5236364,30.9090909 L15.8145455,30.8872727 L14.6418182,33.2327273 C14.5023293,33.5142252 14.5180678,33.8477928 14.6834416,34.1149066 C14.8488153,34.3820203 15.1403833,34.5448181 15.4545455,34.5454545 L37.2727273,34.5454545 C37.7748043,34.5454545 38.1818182,34.1384407 38.1818182,33.6363636 C38.1818182,33.1342866 37.7748043,32.7272727 37.2727273,32.7272727 L16.9254545,32.7272727 L17.9290909,30.7272727 L39.16,29.0909091 C39.5430552,29.06141 39.8662125,28.7942957 39.9672727,28.4236364 L45.4218182,8.42363636 C45.4966879,8.15228265 45.4416305,7.8615525 45.2727273,7.63636364 Z M38.3818182,27.3236364 L16.1490909,29.0345455 L11.18,9.09090909 L43.3618182,9.09090909 L38.3818182,27.3236364 Z" id="Shape" fill-rule="nonzero"></path>
+                  <circle id="Oval" fill-rule="nonzero" cx="18.1818182" cy="38.1818182" r="1.81818182"></circle>
+                  <circle id="Oval" fill-rule="nonzero" cx="34.5454545" cy="38.1818182" r="1.81818182"></circle>
+                  <text font-family="Poppins-ExtraLight, Poppins" font-size="16" font-weight="300" letter-spacing="0.800000012">
+                      <tspan id="cartNumber" x="21.86" y="25">2</tspan>
+                  </text>
+              </g>
+          </g>
+      </g>
+  </svg>
+    </ul>
+  </div>
+
+  <div id="productContainer">
+  </div>
+
+  <div id="shoppingCart" class="modal">
+    <div class="modal-content">
+      <span id="close">&times;</span>
+      <div class="modalHeader">
+        <span class="modalHeaderContent">Your Cart</span>
+      </div>
+      <div class="modalRow">
+          <div class="modalImg">
+            <img src="resources/images/web/rolls/blackberry@2x.jpg" width="82" height="82">
+          </div>
+          <div class="modalInfo">
+            <div class="modalFlavor">Blackberry</div>
+            <div class="modalQuantity">
+              <div class="modalNumber">2</div>
+              <div class="modalToggles">
+                <img id="1_modalplus" src="resources/images/web/plus.svg" onmouseover="this.src='resources/images/web/plushover.svg'" onmouseout="this.src='resources/images/web/plus.svg'" width="30px" height="30px" onclick="cartPlus(this)">
+                <img id="1_modalminus" src="resources/images/web/minus.svg" onmouseover="this.src='resources/images/web/minushover.svg'" onmouseout="this.src='resources/images/web/minus.svg'" width="30px" height="30px" onclick="cartMinus(this)">
+              </div>
+              <button class="modalRemove" onclick="cartRemove(this)">Remove</button>
+            </div>
+          </div>
+          <div class="modalPrice">$10.98</div>
+      </div>
+      <div class="modalRow">
+          <div class="modalImg">
+            <img src="resources/images/web/rolls/walnut@2x.jpg" width="82" height="82">
+          </div>
+          <div class="modalInfo">
+            <div class="modalFlavor">Walnut</div>
+            <div class="modalQuantity">
+              <div class="modalNumber">2</div>
+              <div class="modalToggles">
+                <img id="2_modalplus" src="resources/images/web/plus.svg" onmouseover="this.src='resources/images/web/plushover.svg'" onmouseout="this.src='resources/images/web/plus.svg'" width="30px" height="30px" onclick="cartPlus(this)">
+                <img id="2_modalminus" src="resources/images/web/minus.svg" onmouseover="this.src='resources/images/web/minushover.svg'" onmouseout="this.src='resources/images/web/minus.svg'" width="30px" height="30px" onclick="cartMinus(this)">
+              </div>
+              <button class="modalRemove" onclick="cartRemove(this)">Remove</button>
+            </div>
+          </div>
+          <div class="modalPrice">$10.98</div>
+      </div>
+      <div id="checkoutRow" class="modalRow">
+        <div class="modalTotal">Total: $21.96</div>
+      </div>
+      <button class="checkout" onclick="cartCheckout()">Checkout</button>
+    </div>
+  </div>
+
+  <div id=detailModal class="modal">
+    <div class="detailContent">
+      <span id="detailClose">&times;</span>
+      <div id="detailName">Sample</div>
+      <div class = "detailRow">
+        <div class="detailImageContainer"><img class="detailImage"></img></div>
+        <div class="detailPurchaseInfo">
+          <div class="detailDescription">
+            <div class="detailNumber">2</div>
+            <div class="detailToggles">
+              <img id="detailplus" src="resources/images/web/plus.svg" onmouseover="this.src='resources/images/web/plushover.svg'" onmouseout="this.src='resources/images/web/plus.svg'" width="30px" height="30px" onclick="detailPlus()">
+              <img id="detailminus" src="resources/images/web/minus.svg" onmouseover="this.src='resources/images/web/minushover.svg'" onmouseout="this.src='resources/images/web/minus.svg'" width="30px" height="30px" onclick="detailMinus()">
+            </div>
+          </div>
+          <button class="detailAdd">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="alert" class="modal">
+  <span id="alertClose">&times;</span>
+  <div class="alertContent">
+  </div>
+</div>
+  
+</body>
+</html>
+
+
+
